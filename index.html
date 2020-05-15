@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        .slide-fade-enter-active {
+        transition: all .7s ease;
+        }
+        .slide-fade-leave-active {
+        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .slide-fade-enter, .slide-fade-leave-to
+        /* .slide-fade-leave-active below version 2.1.8 */ {
+        transform: translateY(-85vh);
+        opacity: 0;
+        } 
+        body{
+          text-align: center;
+          background-color: #222;
+        }
+        img{
+          width:30px;
+          position: absolute;
+          margin-top: 85vh;
+          margin-left:4vh;
+        }
+        button{
+          font-size: 20px;
+          color: #fb3;
+          margin-top:90vh;
+          background: inherit;
+          border-color: #fb3;
+          border-radius: 4px;
+        }
+        button:hover{
+          font-size: 21.2px;
+          color: #222;
+          background: #fb3;
+        }
+    </style>
+</head>
+<body>
+    <div id="reaction-feature">
+        <button @click="reaction">
+          Reaction
+        </button>
+        <transition name="slide-fade">
+
+          <img src="musical.svg" v-show="show">
+        </transition>
+      </div>
+<script>
+    new Vue({
+  el: '#reaction-feature',
+  data: {
+    show: false
+  },
+  methods: {
+    reaction: function () {
+      if(!this.show) {
+        this.show = !this.show;
+        
+      }
+    }
+  }
+})
+    
+</script>
+</body>
+</html>
