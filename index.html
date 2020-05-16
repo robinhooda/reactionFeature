@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -41,8 +41,8 @@
         opacity: 0;
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="reactionFeature">
         <button @click="show = !show">
           Reaction
@@ -50,14 +50,14 @@
         <transition name="slide-fade" :duration="{ enter: 0, leave: 3000 }">
           <img src="claps.svg" v-if="show"/>
         </transition>
-      </div>
-<script>
-    new Vue({
-  el: '#reactionFeature',
-  data: {
-    show: false
-  }
-})
-</script>
-</body>
+    </div>
+    <script>
+      new Vue({
+        el: '#reactionFeature',
+        data: {
+          show: false
+        }
+      })
+    </script>
+  </body>
 </html>
